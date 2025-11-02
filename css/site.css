@@ -114,7 +114,7 @@
 
 .w-checkbox-input--inputType-custom.w--redirected-checked {
   background-color: #3898ec;
-  background-image: url('https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg');
+  background-image: url('../images/checkmark.svg');
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1954,6 +1954,23 @@ figcaption {
   display: none;
 }
 
+.w-form-done,
+.w-form-fail {
+  display: none;
+}
+
+.button.is-submitting,
+.button.is-submitting:disabled {
+  opacity: .75;
+  cursor: progress;
+}
+
+@media screen and (min-width: 992px) {
+  .navbar3_menu.is-open {
+    display: flex;
+  }
+}
+
 .navbar3_menu-dropdown {
   margin-left: 0;
   margin-right: 0;
@@ -1990,6 +2007,14 @@ figcaption {
 .navbar3_menu-background {
   display: none;
   position: static;
+}
+
+.navbar3_menu.is-open {
+  display: block;
+}
+
+.navbar3_menu-background.is-visible {
+  display: block;
 }
 
 .navbar3_dropdown-list.w--open {
@@ -2179,14 +2204,15 @@ figcaption {
   width: 100%;
 }
 
-.gallery17_slider {
-  background-color: var(--_primitives---opacity--transparent);
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding-bottom: 4rem;
-  position: relative;
+.gallery17_grid {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  display: grid;
+}
+
+.gallery17_item {
+  width: 100%;
 }
 
 .section_gallery17 {
