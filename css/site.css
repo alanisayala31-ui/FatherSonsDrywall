@@ -114,7 +114,7 @@
 
 .w-checkbox-input--inputType-custom.w--redirected-checked {
   background-color: #3898ec;
-  background-image: url('https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg');
+  background-image: url('../images/checkmark.svg');
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1954,6 +1954,23 @@ figcaption {
   display: none;
 }
 
+.w-form-done,
+.w-form-fail {
+  display: none;
+}
+
+.button.is-submitting,
+.button.is-submitting:disabled {
+  opacity: .75;
+  cursor: progress;
+}
+
+@media screen and (min-width: 992px) {
+  .navbar3_menu.is-open {
+    display: flex;
+  }
+}
+
 .navbar3_menu-dropdown {
   margin-left: 0;
   margin-right: 0;
@@ -1990,6 +2007,14 @@ figcaption {
 .navbar3_menu-background {
   display: none;
   position: static;
+}
+
+.navbar3_menu.is-open {
+  display: block;
+}
+
+.navbar3_menu-background.is-visible {
+  display: block;
 }
 
 .navbar3_dropdown-list.w--open {
@@ -2179,14 +2204,15 @@ figcaption {
   width: 100%;
 }
 
-.gallery17_slider {
-  background-color: var(--_primitives---opacity--transparent);
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding-bottom: 4rem;
-  position: relative;
+.gallery17_grid {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  display: grid;
+}
+
+.gallery17_item {
+  width: 100%;
 }
 
 .section_gallery17 {
@@ -3247,8 +3273,12 @@ figcaption {
     padding-bottom: 6.5rem;
     padding-left: 5vw;
     padding-right: 5vw;
-    transition: height .5s;
+    transition: transform .4s ease, opacity .3s ease;
     display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-110%);
     position: absolute;
     inset: 0% auto 0% 0%;
     overflow: auto;
@@ -3321,6 +3351,10 @@ figcaption {
     padding-bottom: 0;
     padding-right: 0;
     display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .3s ease;
     position: absolute;
     inset: 0%;
   }
@@ -3342,6 +3376,20 @@ figcaption {
     height: 2px;
     padding-bottom: 0;
     padding-right: 0;
+  }
+
+  .navbar3_menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+
+  .navbar3_menu-background.is-visible {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .layout3_content {
